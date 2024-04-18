@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
+    </head>
+
+    <body>
+        <div class="weather-app">
+            <div class="container">
+                <h3 class="brand">The Weather</h3>
+                <div>
+                    <h1 class="temperature">20&#176;</h1>
+                    <div class="city-time">
+                        <h1 class="name">Hanoi</h1>
+                        <p><span class="time">17:00</span> - <span class="date">Monday, Mar 18</span></p>
+                    </div>
+                    <div class="weather">
+                        <img src="./assets/icon/day/113.png" alt="icon" class="icon" width="50" height="50" />
+                        <span class="condition">Sunny</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <form id="cityInput">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    <input type="text" class="search" placeholder="Search City ..." />
+                    <button type="submit" class="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <ul class="cities">
+                    <li class="city">New York</li>
+                    <li class="city">London</li>
+                    <li class="city">Tokyo</li>
+                    <li class="city">Moscow</li>
+                </ul>
+
+                <ul class="details">
+                    <h4>Weather details</h4>
+                    <li>
+                        <span>Cloud</span>
+                        <span class="cloud">26%</span>
+                    </li>
+                    <li>
+                        <span>Humidity</span>
+                        <span class="humidity">50%</span>
+                    </li>
+                    <li>
+                        <span>Wind</span>
+                        <span class="wind">10km/h</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

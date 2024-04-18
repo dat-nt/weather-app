@@ -1,0 +1,56 @@
+@media screen and (min-width: 741px) and (max-width: 960px) {
+    .container > div {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: calc(60% - 2em);
+    }
+    .temperature {
+        width: 100%;
+        text-align: center;
+    }
+    .city-time > p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .panel,
+    .container {
+        position: relative;
+        width: 100%;
+        top: inherit;
+    }
+
+    .container > div {
+        justify-content: center;
+    }
+
+    .city-time > p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 13px;
+    }
+
+    .container > div {
+        flex-wrap: wrap;
+    }
+
+    .temperature {
+        width: 100%;
+        text-align: center;
+    }
+
+    .brand {
+        text-align: center;
+    }
+}
+
+@media screen and (max-height: 300px) {
+    .weather-app {
+        min-height: 40em;
+    }
+}
