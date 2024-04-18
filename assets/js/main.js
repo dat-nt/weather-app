@@ -20,7 +20,7 @@ const cities = $$(".city");
 let inputCity = "Hanoi";
 
 function fetchData() {
-    const apiURL = `http://api.weatherapi.com/v1/current.json?key=83ce26174da64086b15140754241804&q=${inputCity}&aqi=no`;
+    const apiURL = `https://api.weatherapi.com/v1/current.json?key=83ce26174da64086b15140754241804&q=${inputCity}&aqi=no`;
 
     fetch(apiURL)
         .then(response => response.json())
