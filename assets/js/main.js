@@ -32,7 +32,6 @@ function fetchData() {
             const y = parseInt(date.substr(0, 4));
             const m = parseInt(date.substr(5, 2));
             const d = parseInt(date.substr(8, 2));
-
             dateOutput.innerHTML = `${getWeekDay(d, m, y)}, ${d}/${m}/${y}`;
             timeOutput.innerHTML = date.substr(11);
 
@@ -49,34 +48,33 @@ function fetchData() {
             const timeOfday = data.current.is_day ? "day" : "night";
             const code = data.current.condition.code;
             if (code === 1000) {
-                btnSearch.style.backgroundColor = "#e5ba92";
-                if (timeOfday == "night") {
-                    btnSearch.style.backgroundColor = "#181e27";
-                }
+                weatherApp.style.backgroundImage = `url(./assets/image/${timeOfday}/clear.jpg)`;
+                timeOfday === "night"
+                    ? btnSearch.style.backgroundColor = "#181e27"
+                    : btnSearch.style.backgroundColor = "#e6ba93";
+
             }
             else if (
                 [1003, 1006, 1009, 1030, 1069, 1087, 1135, 1273, 1276, 1279, 1282].includes(code)
             ) {
                 weatherApp.style.backgroundImage = `url(./assets/image/${timeOfday}/cloudy.jpg)`;
-                btnSearch.style.backgroundColor = "#fa6d1b";
-                if (timeOfday == "night") {
-                    btnSearch.backgroundColor = "#181e27";
-                }
+                timeOfday === "night"
+                    ? btnSearch.backgroundColor = "#181e27"
+                    : btnSearch.style.backgroundColor = "#fa6d1b";
             }
             else if (
                 [1063, 1069, 1072, 1150, 1153, 1180, 1183, 1186, 1189, 1192, 1195, 1204, 1207, 1240, 1243, 1246, 1252].includes[code]
             ) {
                 weatherApp.style.backgroundImage = `url(./assets/image/${timeOfday}/rainy.jpg)`
-                btnSearch.style.backgroundColor = "#647d75";
-                if (timeOfday == "night") {
-                    btnSearch.style.backgroundColor = "#325c80";
-                }
+                timeOfday === "night"
+                    ? btnSearch.style.backgroundColor = "#325c80"
+                    : btnSearch.style.backgroundColor = "#647d75";
+
             } else {
                 weatherApp.style.backgroundImage = `url(./assets/image/${timeOfday}/snowy.jpg)`
-                btnSearch.style.backgroundColor = "#4d72aa";
-                if (timeOfday == "night") {
-                    btnSearch.style.backgroundColor = "#1b1b1b";
-                }
+                timeOfday === "night"
+                    ? btnSearch.style.backgroundColor = "#1b1b1b"
+                    : btnSearch.style.backgroundColor = "#4d72aa";
             }
             weatherApp.style.opacity = "1";
         })
@@ -99,20 +97,18 @@ cities.forEach((city) => {
     city.onclick = (event) => {
         inputCity = event.target.innerHTML;
         fetchData();
-        weatherApp.style.opacity = "0";
+        weatherApp.style.opacity = "0.3";
     };
 });
 
 form.onsubmit = (event) => {
     event.preventDefault();
-
     if (search.value.trim().length === 0) {
         alert("Please enter a city name!");
     } else {
         inputCity = search.value.trim();
-        console.log(inputCity)
         fetchData();
         search.value = "";
-        weatherApp.style.opacity = "0";
+        weatherApp.style.opacity = "0.3";
     }
 };

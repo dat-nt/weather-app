@@ -26,9 +26,10 @@ h3 {
     min-height: 100vh;
     background: url(../image/day/cloudy.jpg) center/cover no-repeat;
     color: var(--text-color);
-    transition: 0.5s;
+    transition: 0.4s;
     opacity: 1;
     position: relative;
+    animation: backgroundChange linear 0.3s;
 }
 
 .weather-app::before {
@@ -55,7 +56,6 @@ h3 {
 
 .container > div {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
@@ -96,9 +96,9 @@ h3 {
     height: 100%;
     border: 1px solid rgba(255, 255, 255, 0.25);
     background-color: rgba(111, 117, 118, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     z-index: 1;
     padding: 3em 2em;
     overflow-y: scroll;
