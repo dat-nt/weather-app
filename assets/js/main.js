@@ -76,11 +76,13 @@ function fetchData() {
                     ? btnSearch.style.backgroundColor = "#1b1b1b"
                     : btnSearch.style.backgroundColor = "#4d72aa";
             }
-            weatherApp.style.opacity = "1";
         })
         .catch(() => {
             alert("City not found, please try again");
+        })
+        .finally(() => {
             weatherApp.style.opacity = "1";
+            window.scrollTo(0, 0);
         })
 }
 
